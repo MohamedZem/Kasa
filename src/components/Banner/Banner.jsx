@@ -1,7 +1,7 @@
 
-function Banner({ image, title }) {
+function Banner({ image, title, className = "" }) {
   return (
-    <div className="banner">
+    <div className={`banner ${className}`}>
       <img src={image} alt={title} className="banner__image" />
       {title && <h2 className="banner__title">{title}</h2>}
     </div>

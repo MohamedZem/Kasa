@@ -1,5 +1,23 @@
-function Error() {
-  return <h1>404 - Page non trouvée</h1>;
+import { Link } from 'react-router-dom'
+
+function Error({
+	title = '404',
+	subtitle = 'Oops, une erreur est survenue.',
+	subtitle2 = '',
+}) {
+	return (
+		<section className="error">
+			<h1 className="error-title">{title}</h1>
+			<h2 className="error-subtitle">
+				{subtitle}
+				{subtitle2 && <br className="error404-subtitle-br" />}
+				{subtitle2 && subtitle2}
+			</h2>
+			<Link className="error-link" to="/">
+				Retourner sur la page d'accueil
+			</Link>
+		</section>
+	)
 }
 
-export default Error;
+export default Error
