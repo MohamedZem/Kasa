@@ -1,0 +1,21 @@
+
+/* BASE */
+@import "./variables";
+@import "./mixin";
+@import "./style";
+
+
+@import "../components/Header/header";
+@import "../components/Footer/footer";
+
+/* COMPONENTS */
+@import "../components/Banner/banner";
+@import "../components/Card/card";
+@import "../components/Caroussel/caroussel";
+@import "../components/Collapse/collapse";
+
+/* PAGES */
+@import "../pages/Home/home";
+@import "../pages/About/about";
+@import "../pages/Housing/housing";
+@import "../pages/Error/error";

@@ -1,0 +1,23 @@
+.error {
+  text-align: center;
+
+  &-title {
+    font-size: 288px;
+    color: $primary-color;
+  }
+
+  &-subtitle {
+    font-size: 36px;
+    color: $primary-color;
+  }
+
+  @include mobile {
+    &-title {
+      font-size: 120px;
+    }
+
+    &-subtitle {
+      font-size: 18px;
+    }
+  }
+}

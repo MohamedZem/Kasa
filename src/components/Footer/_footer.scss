@@ -1,0 +1,25 @@
+
+.footer {
+  @include flex-center;
+  flex-direction: column;
+  background: $black;
+  color: $white;
+  padding: 10%;
+
+    &__logo {
+        width: 100px;
+        margin-bottom: 10px;
+        filter: brightness(0) invert(1);
+    }
+
+    &__content {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #FFFFFF;
+    }
+    
+    @include mobile {
+        padding: 40px 20px;
+        text-align: center;
+    }
+}

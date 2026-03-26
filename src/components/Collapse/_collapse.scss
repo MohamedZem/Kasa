@@ -1,0 +1,38 @@
+.collapsible {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+
+  &__button {
+    height: 55px;
+    padding: 20px;
+    background-color: $primary-color;
+    color: $white;
+    @include flex-between;
+    border-radius: $radius-sm;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__content {
+    height: 0;
+    overflow: hidden;
+    background: $light-grey;
+    transition: height 0.4s ease;
+    border-radius: $radius-sm;
+    padding: 0 20px;
+  }
+
+  &__img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.4s ease;
+}
+  
+  @include mobile {
+    width: 100%;
+  }
+}
+
+
