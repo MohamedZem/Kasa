@@ -1,0 +1,9 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // 🔥 clé
+
+  &__content {
+    flex: 1; // 🔥 pousse le footer vers le bas
+  }
+}

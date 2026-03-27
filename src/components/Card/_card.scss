@@ -10,14 +10,15 @@
 
   @include mobile {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 0px;
     gap: 20px;
+    background: $white;
   }
 }
 .card {
   position: relative;
-  height: 300px;
-  border-radius: $radius-md;
+  height: 340px;
+  border-radius: $radius-sm;
   overflow: hidden;
 
   &:hover {
@@ -43,6 +44,11 @@
     font-weight: bold;
 
   }
+  @include mobile {
+    height: 255px;
+
+  }
+
 }
 
   

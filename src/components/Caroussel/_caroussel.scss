@@ -35,4 +35,29 @@
     color: white;
     font-size: 18px;
   }
+
+  @include mobile {
+    height: 255px;
+    
+    &__image {
+      border-radius: 10px;
+    }
+    
+    &__arrow {
+      font-size: 24px;
+
+      &.left {
+        left: 10px;
+      }
+      &.right {
+        right: 10px;
+      }
+    }
+    &__counter {
+      display: none;
+    }  
+    
+  }
+
+
 }

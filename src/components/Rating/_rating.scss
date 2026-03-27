@@ -1,0 +1,19 @@
+.rating {
+display: flex;
+gap: 10px;
+
+&__star{
+    width: 36px;
+    height: 36px;
+}
+
+@include mobile {
+        gap: 5px;
+    
+    &__star {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+}

@@ -1,23 +1,50 @@
 .error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  gap: 80px;
+  padding: 50px;
 
-  &-title {
+  &__title {
+    margin: 0;
     font-size: 288px;
+    font-weight: 700;
     color: $primary-color;
   }
 
-  &-subtitle {
+  &__subtitle {
+    margin: 0;
+    font-weight: 500;
     font-size: 36px;
     color: $primary-color;
   }
 
+  &__link {
+    text-decoration: underline;
+    color: $black;
+    margin-bottom: 50px ;
+    font-weight: 500;
+    font-size: 18px;
+  }
+
   @include mobile {
-    &-title {
-      font-size: 120px;
+    gap: 100px;
+
+    &__title {
+      font-size: 96px;
     }
 
-    &-subtitle {
+    &__subtitle {
+      display: flex;
+      flex-direction: column;
       font-size: 18px;
+    }
+
+    &__link {
+      font-size: 14px;
+      
     }
   }
 }
