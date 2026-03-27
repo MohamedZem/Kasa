@@ -38,25 +38,28 @@ function Housing() {
       <Caroussel pictures={logement.pictures} />
 
       <div className="housing__header">
-        <div className='housing__header--left'>
+        <div className='housing__header--high'>
+          <div className='housing__content'>
           <h2>{logement.title}</h2>
           <p>{logement.location}</p>
-
-          <div className="housing__tags">
-            {logement.tags.map((tag, index) => (
-              <span key={index}>{tag}</span>
-            ))}
           </div>
-        </div>
-
-        <div className="housing__header--right">
-          <div className="housing__host">
+        <div className="housing__host">
             <p className='housing__host--name'>{logement.host.name}</p>
             <img
               src={logement.host.picture}
               alt={logement.host.name}
               className="housing__host--picture"
             />
+          </div>
+          
+        </div>
+
+        <div className="housing__header--down">
+          
+          <div className="housing__tags">
+            {logement.tags.map((tag, index) => (
+              <span key={index}>{tag}</span>
+            ))}
           </div>
           <div className="housing__rating">
             <Rating rating={parseInt(logement.rating)} />
