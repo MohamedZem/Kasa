@@ -1,65 +1,85 @@
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import logements from '../../data/logements.json';
 import Caroussel from '../../components/Caroussel/index.jsx'; 
 import Rating from '../../components/Rating/index.jsx';
 import Collapsible from '../../components/Collapse/index.jsx';
 
+const MOBILE_BREAKPOINT = 768;
 
 function Housing() {
   const { id } = useParams();
   const logement = logements.find(item => item.id === id);
 
-  if (!logement) return <Navigate to="*" />;
-
-  // refs des deux contenus
   const descRef = useRef(null);
   const equipRef = useRef(null);
-
-  // hauteur commune
   const [sharedHeight, setSharedHeight] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > MOBILE_BREAKPOINT);
 
-  // recalcul après rendu
+  const measureSharedHeight = () => {
+    const descHeight = descRef.current?.scrollHeight || 0;
+    const equipHeight = equipRef.current?.scrollHeight || 0;
+    setSharedHeight(Math.max(descHeight, equipHeight));
+  };
+
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      const descHeight = descRef.current?.scrollHeight || 0;
-      const equipHeight = equipRef.current?.scrollHeight || 0;
-      const max = Math.max(descHeight, equipHeight);
+    const handleResize = () => {
+      const desktop = window.innerWidth > MOBILE_BREAKPOINT;
+      setIsDesktop(desktop);
 
-      setSharedHeight(max);
-    }, 100); // laisse le DOM se mettre à jour
+      if (!desktop) {
+        setSharedHeight(0);
+        return;
+      }
 
-    return () => clearTimeout(timeout);
-  });
+      requestAnimationFrame(measureSharedHeight);
+    };
 
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isDesktop) {
+      setSharedHeight(0);
+      return;
+    }
+
+    const frame = requestAnimationFrame(measureSharedHeight);
+    return () => cancelAnimationFrame(frame);
+  }, [isDesktop, id]);
+
+  if (!logement) return <Navigate to="*" />;
+  
   return (
     <div className="housing">
 
       <Caroussel pictures={logement.pictures} />
 
       <div className="housing__header">
-        <div className='housing__header--high'>
+        <div className='housing__header--left'>
           <div className='housing__content'>
           <h2>{logement.title}</h2>
           <p>{logement.location}</p>
           </div>
-        <div className="housing__host">
+          <div className="housing__tags">
+            {logement.tags.map((tag, index) => (
+              <span key={index}>{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        <div className="housing__header--right">
+          <div className="housing__host">
             <p className='housing__host--name'>{logement.host.name}</p>
             <img
               src={logement.host.picture}
               alt={logement.host.name}
               className="housing__host--picture"
             />
-          </div>
-          
-        </div>
-
-        <div className="housing__header--down">
-          
-          <div className="housing__tags">
-            {logement.tags.map((tag, index) => (
-              <span key={index}>{tag}</span>
-            ))}
           </div>
           <div className="housing__rating">
             <Rating rating={parseInt(logement.rating)} />
@@ -71,9 +91,9 @@ function Housing() {
         <Collapsible
           title="Description"
           content={<p>{logement.description}</p>}
-          as="h3"
+          as="h4"
           contentRef={descRef}
-          forcedHeight={sharedHeight}
+          forcedHeight={isDesktop ? sharedHeight : undefined}
         />
 
         <Collapsible
@@ -85,9 +105,9 @@ function Housing() {
               ))}
             </ul>
           }
-          as="h3"
+          as="h4"
           contentRef={equipRef}
-          forcedHeight={sharedHeight}
+          forcedHeight={isDesktop ? sharedHeight : undefined}
         />
       </div>
     </div>
