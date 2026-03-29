@@ -1,8 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../Header/index.jsx";
 import Footer from "../Footer/Footer.jsx";
 
 function Layout() {
+  const location = useLocation();
+  const isAboutPage = location.pathname === '/about';
   return (
     <div className="layout">
       <Header />
@@ -11,7 +13,7 @@ function Layout() {
         <Outlet />
       </main>
 
-      <Footer />
+      <Footer className={isAboutPage ? 'footer--about' : ''} />
     </div>
   );
 }
