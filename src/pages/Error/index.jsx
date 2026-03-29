@@ -7,11 +7,11 @@ function Error({
 }) {
 	return (
 		<section className="error">
-			<h1 className="error__title">{title}</h1>
-			<h2 className="error__subtitle">
+			<span className="error__title">{title}</span>
+			<span className="error__subtitle">
 				{subtitle} {subtitle2}
 
-			</h2>
+			</span>
 			<Link className="error__link" to="/">
 				Retourner sur la page d'accueil
 			</Link>
