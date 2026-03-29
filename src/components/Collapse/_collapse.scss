@@ -5,11 +5,11 @@
 
   &__button {
     height: 52px;
-    padding: 20px;
+    padding: $size-20;
     background-color: $primary-color;
     color: $white;
     @include flex-between;
-    border-radius: 5px;
+    border-radius: $size-10;
     width: 100%;
     border: none;
     cursor: pointer;
@@ -20,13 +20,18 @@
     overflow: hidden;
     background: $light-grey;
     transition: height 0.4s ease;
-    border-radius: $radius-sm;
-    padding: 0 20px;
+    border-radius: $size-10;
+    padding: 0px $size-20 0 $size-20;
+    line-height: 1.6;
+  }
+
+  &__inner {
+    padding-bottom: $size-20;
   }
 
   &__img {
-  width: 30px;
-  height: 30px;
+  width: $size-30;
+  height: $size-30;
   transition: transform 0.4s ease;
 }
   
@@ -34,7 +39,7 @@
     width: 100%;
 
     &__button {
-      height: 30px;
+      height: $size-30;
     }
   }
 }

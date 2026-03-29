@@ -1,20 +1,18 @@
 
-/* BASE */
+/* STYLES */
 @import "./variables";
 @import "./mixin";
 @import "./style";
 
-
+/* COMPONENTS */
 @import "../components/Header/header";
 @import "../components/Footer/footer";
-
-/* COMPONENTS */
 @import "../components/Banner/banner";
 @import "../components/Card/card";
 @import "../components/Caroussel/caroussel";
 @import "../components/Collapse/collapse";
-@import "../components/Layout/layout.scss";
-@import "../components/Rating/rating.scss";
+@import "../components/Layout/layout";
+@import "../components/Rating/rating";
 
 /* PAGES */
 @import "../pages/Home/home";

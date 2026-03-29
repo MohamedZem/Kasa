@@ -1,19 +1,19 @@
 .rating {
-display: flex;
-gap: 10px;
+    display: flex;
+    gap: $size-5;
 
-&__star{
+    &__star{
     width: 36px;
     height: 36px;
 }
 
 @include mobile {
-        gap: 5px;
+    gap: $size-5;
     
     &__star {
         width: 18px;
         height: 18px;
+        }
     }
-}
 
 }

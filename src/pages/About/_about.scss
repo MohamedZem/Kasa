@@ -6,14 +6,15 @@
   &__collapsibles {
     @include flex-center;
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 50px;
+    gap: $size-20;
+    margin-bottom: $size-20;
   }
 
   @include mobile {
     &__collapsibles {
       width: 100%;
-      padding: 0 30px;
+      padding: 0 $size-30;
+      margin-bottom: 0;
     }
   }
 }

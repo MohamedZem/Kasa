@@ -3,7 +3,7 @@
   margin: auto;
   padding: 50px;
   background: $light-grey;
-  border-radius: $radius-lg;
+  border-radius: $size-25;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
@@ -11,14 +11,14 @@
   @include mobile {
     grid-template-columns: 1fr;
     padding: 0px;
-    gap: 20px;
+    gap: $size-20;
     background: $white;
   }
 }
 .card {
   position: relative;
   height: 340px;
-  border-radius: $radius-sm;
+  border-radius: $size-10;
   overflow: hidden;
 
   &:hover {
@@ -36,10 +36,10 @@
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    right: 10px;
+    right: $size-10;
     bottom: 0px;
-    left: 20px;
-    color: white;
+    left: $size-20;
+    color: $white;
     font-size: 18px;
     font-weight: bold;
 

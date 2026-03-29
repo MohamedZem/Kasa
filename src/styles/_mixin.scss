@@ -15,3 +15,9 @@
   justify-content: space-between;
   align-items: center;
 }
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

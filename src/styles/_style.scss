@@ -15,5 +15,23 @@ ul {
 
 a {
   text-decoration: none;
-  color: black;
+  color: $black;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+@media (max-width: 350px) {
+  #root {
+    min-width: 300px;
+  }
 }

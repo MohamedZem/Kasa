@@ -2,9 +2,9 @@
   position: relative;
   width: 85%;
   height: 223px;
-  margin: 0 auto 30px;
+  margin: 0 auto $size-30 auto;
   @include flex-center;
-  border-radius: $radius-lg;
+  border-radius: $size-25;
   overflow: hidden;
 
   &::before {
@@ -16,7 +16,7 @@
   }
 
   &__home {
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 $size-10 $size-10 rgba(0, 0, 0, 0.3);
   }
 
   &__image {
@@ -27,25 +27,24 @@
 
   &__title {
     position: absolute;
-    color: white;
+    color: $white;
+    padding: 0 $size-10;
     font-size: 48px;
     font-weight: bold;
     text-shadow:
-      -1px -1px 0 #000,
-      1px -1px 0 #000,
-      -1px  1px 0 #000,
-      1px  1px 0 #000;
-    
-  }
+      -1px -1px 0 $black,
+      1px -1px 0 $black,
+      -1px  1px 0 $black,
+      1px  1px 0 $black;
+    }
 
   @include mobile {
     height: 150px;
-    border-radius: 10px;
+    border-radius: $size-10;
 
     &__title {
       font-size: 24px;
       text-align: left;
-      padding: 0 100px 0 10px;
     }
   }
 }
