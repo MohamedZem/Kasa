@@ -14,43 +14,32 @@ function Housing() {
   const descRef = useRef(null);
   const equipRef = useRef(null);
   const [sharedHeight, setSharedHeight] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > MOBILE_BREAKPOINT);
+  const [isDesktop, setIsDesktop] = useState(false);
+  
+  const measureHeight = () => {
+  const descHeight = descRef.current?.scrollHeight || 0;
+  const equipHeight = equipRef.current?.scrollHeight || 0;
 
-  const measureSharedHeight = () => {
-    const descHeight = descRef.current?.scrollHeight || 0;
-    const equipHeight = equipRef.current?.scrollHeight || 0;
-    setSharedHeight(Math.max(descHeight, equipHeight));
+  setSharedHeight(Math.max(descHeight, equipHeight));
+};
+
+  useEffect(() => {
+  const handleResize = () => {
+    const desktop = window.innerWidth > 768;
+    setIsDesktop(desktop);
+
+    if (desktop) {
+      requestAnimationFrame(measureHeight);
+    } else {
+      setSharedHeight(0);
+    }
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      const desktop = window.innerWidth > MOBILE_BREAKPOINT;
-      setIsDesktop(desktop);
+  window.addEventListener("resize", handleResize);
+  handleResize();
 
-      if (!desktop) {
-        setSharedHeight(0);
-        return;
-      }
-
-      requestAnimationFrame(measureSharedHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!isDesktop) {
-      setSharedHeight(0);
-      return;
-    }
-
-    const frame = requestAnimationFrame(measureSharedHeight);
-    return () => cancelAnimationFrame(frame);
-  }, [isDesktop, id]);
+  return () => window.removeEventListener("resize", handleResize);
+}, [id]);
 
   if (!logement) return <Navigate to="*" />;
   
@@ -58,7 +47,7 @@ function Housing() {
     <div className="housing">
 
       <Caroussel pictures={logement.pictures} />
-
+      
       <div className="housing__header">
         <div className='housing__header--left'>
           <div className='housing__content'>
@@ -114,4 +103,4 @@ function Housing() {
   );
 }
 
-export default Housing;
+export default Housing; 
