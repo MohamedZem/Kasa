@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Banner from '../../components/Banner/Banner.jsx';
 import banner from '../../assets/banner-about.jpg';
 import Collapsible from '../../components/Collapse/index.jsx';

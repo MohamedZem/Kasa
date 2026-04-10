@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Error({
 	title = '404',
@@ -12,9 +12,9 @@ function Error({
 				{subtitle} {subtitle2}
 
 			</span>
-			<Link className="error__link" to="/">
+			<NavLink className="error__link" to="/">
 				Retourner sur la page d'accueil
-			</Link>
+			</NavLink>
 		</section>
 	)
 }
