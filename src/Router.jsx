@@ -15,6 +15,7 @@ function Router () {
                     <Route index element={<Home />} />
                     <Route path="about" element={<About />} />
                     <Route path="housing/:id" element={<Housing />} />
+                    <Route path="error" element={<Error />} />
                     <Route path="*" element={<Error />} />
                 </Route>
             </Routes>

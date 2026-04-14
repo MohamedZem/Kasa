@@ -41,7 +41,7 @@ function Housing() {
   return () => window.removeEventListener("resize", handleResize);
 }, [id]);
 
-  if (!logement) return <Navigate to="*" />;
+  if (!logement) return <Navigate to="/error" />;
   
   return (
     <div className="housing">
