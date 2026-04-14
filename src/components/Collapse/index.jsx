@@ -14,13 +14,14 @@ function Collapsible({ title, content, as, contentRef, forcedHeight }) {
 
   return (
     <div className={`collapsible ${isOpen ? "collapsible--opened" : ""}`}>
-      <button className="collapsible__button" onClick={toggle}>
+      <button className="collapsible__button" >
         <Tag>{title}</Tag>
         <img
           className="collapsible__img"
           style={{ transform: `rotate(${isOpen ? -180 : 0}deg)` }}
           src={Arrow}
           alt="arrow"
+          onClick={toggle}
         />
       </button>
 

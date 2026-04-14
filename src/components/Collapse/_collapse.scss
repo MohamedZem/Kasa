@@ -12,7 +12,7 @@
     border-radius: $size-10;
     width: 100%;
     border: none;
-    cursor: pointer;
+    
   }
 
   &__content {
@@ -28,6 +28,7 @@
   width: $size-30;
   height: $size-30;
   transition: transform 0.4s ease;
+  cursor: pointer;
   }
 
   @include mobile {
