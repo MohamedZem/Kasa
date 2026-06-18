@@ -10,5 +10,6 @@
   "image": "assets/Kasa.png",
   "demoUrl": "",
   "featured": true,
+  "category": "Backend"
   "order": 2
 }
