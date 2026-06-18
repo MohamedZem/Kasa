@@ -8,6 +8,7 @@
     "Vite"
   ],
   "image": "assets/kasa.png",
+  "logo": "assets/logo.png",
   "demoUrl": "",
   "featured": true,
   "category": "Backend"
