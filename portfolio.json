@@ -1,0 +1,14 @@
+{
+  "title": "Kasa",
+  "description": "Application de location immobilière développée avec React et React Router. L'application permet de consulter des logements, visualiser leurs photos, leurs équipements et leurs informations détaillées dans une interface moderne et responsive.",
+  "technologies": [
+    "React",
+    "React Router",
+    "Sass",
+    "Vite"
+  ],
+  "image": "preview.png",
+  "demoUrl": "",
+  "featured": true,
+  "order": 2
+}
