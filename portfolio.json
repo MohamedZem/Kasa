@@ -8,8 +8,43 @@
     "Vite"
   ],
   "image": "assets/kasa.png",
+  "gallery": [
+    "assets/kasa.png",
+    "assets/logement.png",
+    "assets/about.png"
+  ],
   "logo": "assets/logo.png",
   "demoUrl": "",
   "featured": true,
-  "category": "Backend"
+  "category": "Frontend",
+  "context": "Développement d'une application React à partir d'une maquette et de données JSON.",
+
+  "objectives": [
+    "Créer une application React.",
+    "Mettre en place le routage.",
+    "Créer des composants réutilisables.",
+    "Développer une interface responsive."
+  ],
+
+  "skills": [
+    "React",
+    "React Router",
+    "Composants",
+    "Props",
+    "Sass",
+    "Vite"
+  ],
+
+  "results": [
+    "Application fluide.",
+    "Navigation dynamique.",
+    "Architecture modulaire.",
+    "Interface responsive."
+  ],
+
+  "improvements": [
+    "Connexion à une API.",
+    "Ajout de tests.",
+    "Optimisation des animations."
+  ]
 }
