@@ -44,7 +44,6 @@
 
   "improvements": [
     "Connexion à une API.",
-    "Ajout de tests.",
     "Optimisation des animations."
   ]
 }
