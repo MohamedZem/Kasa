@@ -1,7 +1,7 @@
 # 🏠 Kasa
 
 <p align="center">
-  <img src="./assets/preview.png" alt="Aperçu du projet Kasa" width="900">
+  <img src="./assets/Kasa.png" alt="Aperçu du projet Kasa" width="900">
 </p>
 
 <p align="center">
