@@ -19,7 +19,7 @@
 
 # 📖 À propos
 
-**Kasa** est le cinquième projet réalisé dans le cadre de la formation **Développeur Web OpenClassrooms**.
+**Kasa** est le quatrième projet réalisé dans le cadre de la formation **Développeur Web OpenClassrooms**.
 
 L'objectif était de développer une **Single Page Application (SPA)** de location immobilière en utilisant **React**, **React Router** et **Sass**.
 
